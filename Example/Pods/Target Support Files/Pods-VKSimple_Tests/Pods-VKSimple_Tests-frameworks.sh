@@ -84,8 +84,10 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-VKSimple_Tests/AFNetworking.framework"
   install_framework "Pods-VKSimple_Tests/VKSimple.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-VKSimple_Tests/AFNetworking.framework"
   install_framework "Pods-VKSimple_Tests/VKSimple.framework"
 fi
