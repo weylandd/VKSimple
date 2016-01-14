@@ -32,6 +32,7 @@
 
 - (void)wakeUpSuccess:(CodeBlock)success failure:(FailureBlock)failure
 {
+    // проверяем на наличие токена и время его жизни (если в настройки доступа не передан VK_PER_OFFLINE)
     if (![VKStorage isTokenValid])
     {
         if (failure)
@@ -40,6 +41,7 @@
         }
         return;
     }
+    // пробуем вызвать метод для проверки токена
     [VKSimpleMethodsUsers get_success:^(VKUser *user) {
         if (success)
         {

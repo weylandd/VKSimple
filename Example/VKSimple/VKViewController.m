@@ -15,6 +15,7 @@
 @property (nonatomic, weak) IBOutlet UIButton *signInWeb;
 @property (nonatomic, weak) IBOutlet UIButton *signOut;
 
+// окно авторизации
 @property (nonatomic, strong) VKAuthorizationView *authView;
 @property (nonatomic, assign) BOOL isUserLogged;
 
@@ -30,6 +31,7 @@
 
 - (void)_setupInitialState
 {
+    // метод проверяет авторизованы ли вы
     [VKSimple wakeUpSuccess:^{
         self.isUserLogged = YES;
     } failure:^(BOOL isConnection, VKApiError *error) {
@@ -49,6 +51,7 @@
 
 - (void)_layoutAuthView
 {
+    // устанавливаем frame для окна авторизации
     CGRect rect = self.view.bounds;
     self.authView.frame = rect;
 }
@@ -57,12 +60,14 @@
 
 - (IBAction)signInWebButtonDidPressed:(id)sender
 {
+    // авторизация через web view
     [VKSimpleAuth authInViewSuccess:^{
         self.isUserLogged = YES;
     } failure:nil];
 }
 - (IBAction)signInAppButtonDidPressed:(id)sender
 {
+    // авторизация через официальное приложение
     [VKSimpleAuth authSuccess:^{
         self.isUserLogged = YES;
     } failure:nil];
@@ -70,6 +75,7 @@
 
 - (IBAction)signOutButtonDidPressed:(id)sender
 {
+    // выход из под аккаунта
     [VKSimpleAuth logout];
     self.isUserLogged = NO;
 }

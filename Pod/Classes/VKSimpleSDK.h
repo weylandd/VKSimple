@@ -14,10 +14,13 @@
 
 + (instancetype)sharedSimpleSDK;
 
+// первоначальная настройка
 - (void)setClientId:(NSString *)clientId permissions:(NSInteger)permissions;
 
+// обработка полученого урл
 - (void)handleOpenURL:(NSURL *)url fromApplication:(NSString *)aplication;
 
+// проверка на авторизован / не авторизован
 - (void)wakeUpSuccess:(CodeBlock)success failure:(FailureBlock)failure;
 
 @end

@@ -1,6 +1,5 @@
 # VKSimple
 
-[![CI Status](http://img.shields.io/travis/Alex Kopachev/VKSimple.svg?style=flat)](https://travis-ci.org/Alex Kopachev/VKSimple)
 [![Version](https://img.shields.io/cocoapods/v/VKSimple.svg?style=flat)](http://cocoapods.org/pods/VKSimple)
 [![License](https://img.shields.io/cocoapods/l/VKSimple.svg?style=flat)](http://cocoapods.org/pods/VKSimple)
 [![Platform](https://img.shields.io/cocoapods/p/VKSimple.svg?style=flat)](http://cocoapods.org/pods/VKSimple)
