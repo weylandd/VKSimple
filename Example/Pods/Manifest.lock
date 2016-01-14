@@ -1,0 +1,14 @@
+PODS:
+  - VKSimple (0.1.0)
+
+DEPENDENCIES:
+  - VKSimple (from `../`)
+
+EXTERNAL SOURCES:
+  VKSimple:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  VKSimple: 2dbc5051bc690fdabdf5cd845fe331bd67062c69
+
+COCOAPODS: 0.39.0

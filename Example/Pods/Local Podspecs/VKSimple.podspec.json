@@ -1,0 +1,25 @@
+{
+  "name": "VKSimple",
+  "version": "0.1.0",
+  "summary": "A short description of VKSimple.",
+  "description": "",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/VKSimple",
+  "license": "MIT",
+  "authors": {
+    "Alex Kopachev": "jioruh2011@ya.ru"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/VKSimple.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "VKSimple": [
+      "Pod/Assets/*.png"
+    ]
+  }
+}
