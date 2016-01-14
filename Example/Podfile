@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'VKSimple_Example', :exclusive => true do
+  pod "VKSimple", :path => "../"
+end
+
+target 'VKSimple_Tests', :exclusive => true do
+  pod "VKSimple", :path => "../"
+
+  
+end
