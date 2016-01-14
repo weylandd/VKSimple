@@ -1,13 +1,23 @@
 //
 //  VKSimpleSDK.h
-//  Pods
-//
-//  Created by Alex Kopachev on 14.01.16.
-//
+//  VkSimpleSdk
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "VKSimpleAuthorization.h"
+#import "VKMethods.h"
+
+#define VKSimple [VKSimpleSDK sharedSimpleSDK]
 
 @interface VKSimpleSDK : NSObject
+
++ (instancetype)sharedSimpleSDK;
+
+- (void)setClientId:(NSString *)clientId permissions:(NSInteger)permissions;
+
+- (void)handleOpenURL:(NSURL *)url fromApplication:(NSString *)aplication;
+
+- (void)wakeUpSuccess:(CodeBlock)success failure:(FailureBlock)failure;
 
 @end
