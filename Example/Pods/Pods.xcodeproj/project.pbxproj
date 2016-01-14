@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09FD2F263D9DA2C38B8246EA541243E6 /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D253510B35D35ECD87CE8F6CC1A4E5D /* ReplaceMe.m */; };
 		0B6F6C03AB868EF253B2A4386B421341 /* Pods-VKSimple_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 349ACB0F23F6062068367E9E91980BB1 /* Pods-VKSimple_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2F34DC6F56A70C6274C5FCA661891842 /* VKSimple.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D66EAB83BE6B6D2FF2CBB7DF4826EC88 /* VKSimple.bundle */; };
 		431BF215DDBC91E02C37B8A45F14A946 /* VKSimple-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BA4D76DC23CD0783A0EBB25935B0F7C /* VKSimple-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -18,6 +17,10 @@
 		82F65F89955820A951AE92C2529B9E56 /* VKSimple-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B04F8F74E698C998CFB45A8225B9667 /* VKSimple-dummy.m */; };
 		B59A0FB4A3ED0B0C3414D1687CAA261F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		F29B8809A9A7E27044B3916F756DD56D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		FA59188F1C47886A0029AADA /* VKSimpleSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = FA59188D1C47886A0029AADA /* VKSimpleSDK.h */; };
+		FA5918901C47886A0029AADA /* VKSimpleSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = FA59188D1C47886A0029AADA /* VKSimpleSDK.h */; };
+		FA5918911C47886A0029AADA /* VKSimpleSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = FA59188E1C47886A0029AADA /* VKSimpleSDK.m */; };
+		FA5918921C47886A0029AADA /* VKSimpleSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = FA59188E1C47886A0029AADA /* VKSimpleSDK.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +71,6 @@
 		5E7335AB8BC49A5E6ABBD679BEC2BEEE /* Pods-VKSimple_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VKSimple_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		60A9136D8BA4433629586D982B560A70 /* Pods-VKSimple_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VKSimple_Tests-dummy.m"; sourceTree = "<group>"; };
 		63F53BAADF0B96E3488B2C635C0E5E45 /* Pods-VKSimple_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-VKSimple_Example.modulemap"; sourceTree = "<group>"; };
-		7D253510B35D35ECD87CE8F6CC1A4E5D /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ReplaceMe.m; sourceTree = "<group>"; };
 		91C8B11DAF07A2FFAE0B5A4A7D60D234 /* VKSimple.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = VKSimple.modulemap; sourceTree = "<group>"; };
 		9224D913C600663E7F6AA23672F9E900 /* Pods-VKSimple_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VKSimple_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		9B846D5775921026122CA589E3C63DDD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,6 +80,8 @@
 		EBAFE80725E5C87C0376AC1FE9B68120 /* Pods-VKSimple_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VKSimple_Example-dummy.m"; sourceTree = "<group>"; };
 		ED0038B93668ECBEA33CA39774C3ED4C /* VKSimple-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VKSimple-prefix.pch"; sourceTree = "<group>"; };
 		EF6CDA2FB96DACD561BBD493D938CD51 /* Pods-VKSimple_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VKSimple_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		FA59188D1C47886A0029AADA /* VKSimpleSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKSimpleSDK.h; sourceTree = "<group>"; };
+		FA59188E1C47886A0029AADA /* VKSimpleSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKSimpleSDK.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,7 +185,8 @@
 		49B565A0D708A389D00F4F60B5EE5983 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				7D253510B35D35ECD87CE8F6CC1A4E5D /* ReplaceMe.m */,
+				FA59188D1C47886A0029AADA /* VKSimpleSDK.h */,
+				FA59188E1C47886A0029AADA /* VKSimpleSDK.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA59188F1C47886A0029AADA /* VKSimpleSDK.h in Headers */,
 				6DF61C18F344D100831E101FAFFED744 /* Pods-VKSimple_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +275,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA5918901C47886A0029AADA /* VKSimpleSDK.h in Headers */,
 				431BF215DDBC91E02C37B8A45F14A946 /* VKSimple-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,8 +407,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09FD2F263D9DA2C38B8246EA541243E6 /* ReplaceMe.m in Sources */,
 				82F65F89955820A951AE92C2529B9E56 /* VKSimple-dummy.m in Sources */,
+				FA5918921C47886A0029AADA /* VKSimpleSDK.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49856C3242DB034ED5F6FF72261F9908 /* Pods-VKSimple_Example-dummy.m in Sources */,
+				FA5918911C47886A0029AADA /* VKSimpleSDK.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
