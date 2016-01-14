@@ -9,7 +9,7 @@
 
 typedef NS_ENUM(NSInteger, VKNameCase)
 {
-    VKNameCase_nom,
+    VKNameCase_nom = 0,
     VKNameCase_gen,
     VKNameCase_dat,
     VKNameCase_acc,

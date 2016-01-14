@@ -1,0 +1,1 @@
+../../../../../Pod/Classes/Methods/Users/Models/VKUser.h

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="whP-gf-Uak">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="whP-gf-Uak">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,8 +16,60 @@
                     <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Pq-TR-cP5">
+                                <rect key="frame" x="177" y="264" width="246" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="246" id="Ygk-Eh-CEx"/>
+                                    <constraint firstAttribute="height" constant="30" id="od4-39-XB9"/>
+                                </constraints>
+                                <state key="normal" title="Войти через vk app"/>
+                                <connections>
+                                    <action selector="signInAppButtonDidPressed:" destination="whP-gf-Uak" eventType="touchUpInside" id="Myb-Ec-NWI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4g-Km-gty">
+                                <rect key="frame" x="177" y="331" width="246" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="246" id="YXr-o4-Cpq"/>
+                                    <constraint firstAttribute="height" constant="30" id="bOX-g1-3Xa"/>
+                                </constraints>
+                                <state key="normal" title="Войти через web view"/>
+                                <connections>
+                                    <action selector="signInWebButtonDidPressed:" destination="whP-gf-Uak" eventType="touchUpInside" id="GOc-A5-aWc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WgK-BY-Rpa">
+                                <rect key="frame" x="177" y="404" width="246" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="246" id="2OT-vR-B4Q"/>
+                                    <constraint firstAttribute="height" constant="30" id="Rip-fY-0z3"/>
+                                </constraints>
+                                <state key="normal" title="Выйти"/>
+                                <connections>
+                                    <action selector="signOutButtonDidPressed:" destination="whP-gf-Uak" eventType="touchUpInside" id="J9N-rK-G8X"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="s4g-Km-gty" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="7qC-r0-9Cw"/>
+                            <constraint firstItem="s4g-Km-gty" firstAttribute="top" secondItem="2Pq-TR-cP5" secondAttribute="bottom" constant="37" id="AyK-Tv-wyh"/>
+                            <constraint firstItem="WgK-BY-Rpa" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="MYs-6o-WAI"/>
+                            <constraint firstItem="2Pq-TR-cP5" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="W6c-N4-Cnb"/>
+                            <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="WgK-BY-Rpa" secondAttribute="bottom" constant="166" id="fwm-Fu-yZH"/>
+                            <constraint firstItem="WgK-BY-Rpa" firstAttribute="top" secondItem="s4g-Km-gty" secondAttribute="bottom" constant="43" id="iBi-Gl-fzk"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="signInApp" destination="2Pq-TR-cP5" id="tcX-Zn-TG5"/>
+                        <outlet property="signInWeb" destination="s4g-Km-gty" id="8nw-yn-3IO"/>
+                        <outlet property="signOut" destination="WgK-BY-Rpa" id="brY-EJ-hhv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

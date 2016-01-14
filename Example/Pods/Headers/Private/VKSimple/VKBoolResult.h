@@ -1,0 +1,1 @@
+../../../../../Pod/Classes/Methods/Models/VKBoolResult.h

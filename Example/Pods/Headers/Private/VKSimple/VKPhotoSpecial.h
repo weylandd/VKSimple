@@ -1,0 +1,1 @@
+../../../../../Pod/Classes/Methods/Photos/Models/VKPhotoSpecial.h

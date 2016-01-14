@@ -7,8 +7,16 @@
 //
 
 #import "VKViewController.h"
+#import "VKSimpleSDK.h"
 
 @interface VKViewController ()
+
+@property (nonatomic, weak) IBOutlet UIButton *signInApp;
+@property (nonatomic, weak) IBOutlet UIButton *signInWeb;
+@property (nonatomic, weak) IBOutlet UIButton *signOut;
+
+@property (nonatomic, strong) VKAuthorizationView *authView;
+@property (nonatomic, assign) BOOL isUserLogged;
 
 @end
 
@@ -17,13 +25,63 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    [self _setupInitialState];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)_setupInitialState
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [VKSimple wakeUpSuccess:^{
+        self.isUserLogged = YES;
+    } failure:^(BOOL isConnection, VKApiError *error) {
+        self.isUserLogged = !isConnection;
+    }];
+    self.authView = VKSimpleAuth.authView;
+    self.authView.hidden = YES;
+    [self.view addSubview:self.authView];
+}
+
+#pragma mark - > layout <
+
+- (void)viewWillLayoutSubviews
+{
+    [self _layoutAuthView];
+}
+
+- (void)_layoutAuthView
+{
+    CGRect rect = self.view.bounds;
+    self.authView.frame = rect;
+}
+
+#pragma mark - actions
+
+- (IBAction)signInWebButtonDidPressed:(id)sender
+{
+    [VKSimpleAuth authInViewSuccess:^{
+        self.isUserLogged = YES;
+    } failure:nil];
+}
+- (IBAction)signInAppButtonDidPressed:(id)sender
+{
+    [VKSimpleAuth authSuccess:^{
+        self.isUserLogged = YES;
+    } failure:nil];
+}
+
+- (IBAction)signOutButtonDidPressed:(id)sender
+{
+    [VKSimpleAuth logout];
+    self.isUserLogged = NO;
+}
+
+#pragma mark - setters
+
+- (void)setIsUserLogged:(BOOL)isUserLogged
+{
+    _isUserLogged = isUserLogged;
+    self.signInApp.hidden = isUserLogged;
+    self.signInWeb.hidden = isUserLogged;
+    self.signOut.hidden = !isUserLogged;
 }
 
 @end
