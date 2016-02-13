@@ -17,9 +17,6 @@
 
 - (void)authWithURL:(NSURL *)url
 {
-    self.webView = [[UIWebView alloc] initWithFrame:self.bounds];
-    self.webView.delegate = self;
-    [self addSubview:self.webView];
     [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
 }
 
@@ -44,6 +41,33 @@
     }
     [self.output vkAuthViewAuthFailed];
     VKError(@"%@", error);
+}
+
+#pragma mark - > Layout <
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    [self _layoutWebView];
+}
+
+- (void)_layoutWebView
+{
+    CGRect rect = self.bounds;
+    self.webView.frame = rect;
+}
+
+#pragma mark - Lazy initialization
+
+- (UIWebView *)webView
+{
+    if (!_webView)
+    {
+        _webView = [UIWebView new];
+        _webView.delegate = self;
+        [self addSubview:_webView];
+    }
+    return _webView;
 }
 
 @end

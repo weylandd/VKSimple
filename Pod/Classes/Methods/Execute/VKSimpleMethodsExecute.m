@@ -22,7 +22,7 @@ static NSString *kParam_extended = @"extended";
 
 + (void)getAllPhotos_withUserId:(NSString *)userId success:(void(^)(VKPhotos *photos))success failure:(FailureBlock)failure
 {
-    [self getAllPhotos_withUserId:userId offset:nil count:nil success:success failure:failure];
+    [self getAllPhotos_withUserId:userId offset:@0 count:@4800 success:success failure:failure];
 }
 
 + (void)getAllPhotos_withUserId:(NSString *)userId offset:(NSNumber *)offset count:(NSNumber *)count success:(void (^)(VKPhotos *))success failure:(FailureBlock)failure

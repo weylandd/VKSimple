@@ -9,6 +9,7 @@
 #import "VKStorage.h"
 #import "VKAuthorizationResult.h"
 #import "VKConsts.h"
+#import "VKDefaultAuthorizationView.h"
 
 static NSString *VkAuth_inAppUrlString = @"vkauthorize://authorize";
 static NSString *VkAuth_inWebUrlString = @"https://oauth.vk.com/authorize";
@@ -32,6 +33,7 @@ static NSString *VkOfficialClientUrl = @"vkauthorize://";
 
 @property (nonatomic, strong) NSString *clientId;
 @property (nonatomic, assign) NSInteger permissions;
+@property (nonatomic, strong) VKDefaultAuthorizationView *defaultAuthorizationView;
 
 @end
 
@@ -73,6 +75,11 @@ static NSString *VkOfficialClientUrl = @"vkauthorize://";
 
 - (void)authInVKAuthorizationView
 {
+    if (!self.authView.superview)
+    {
+        [self.defaultAuthorizationView present];
+        self.defaultAuthorizationView.authView = self.authView;
+    }
     if (_outputCan.vkAuthViewWillOpen)
     {
         [self.output vkAuthViewWillOpen];
@@ -157,11 +164,13 @@ static NSString *VkOfficialClientUrl = @"vkauthorize://";
 - (void)vkAuthViewAuthSuccess
 {
     [self _authSuccess];
+    [_defaultAuthorizationView dismiss];
 }
 
 - (void)vkAuthViewAuthFailed
 {
     [self _authFailed];
+    [_defaultAuthorizationView dismiss];
 }
 
 - (void)vkAuthViewDidConnectionProblem
@@ -260,6 +269,15 @@ static NSString *VkOfficialClientUrl = @"vkauthorize://";
         _authView.output = self;
     }
     return _authView;
+}
+
+- (VKDefaultAuthorizationView *)defaultAuthorizationView
+{
+    if (!_defaultAuthorizationView)
+    {
+        _defaultAuthorizationView = [VKDefaultAuthorizationView new];
+    }
+    return _defaultAuthorizationView;
 }
 
 @end

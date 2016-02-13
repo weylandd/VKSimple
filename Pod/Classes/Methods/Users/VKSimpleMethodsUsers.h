@@ -9,12 +9,12 @@
 
 typedef NS_ENUM(NSInteger, VKNameCase)
 {
-    VKNameCase_nom = 0,
-    VKNameCase_gen,
-    VKNameCase_dat,
-    VKNameCase_acc,
-    VKNameCase_ins,
-    VKNameCase_abl
+    VKNameCase_nom = 0,  //именительный
+    VKNameCase_gen,      //родительный
+    VKNameCase_dat,      //дательный
+    VKNameCase_acc,      //винительный
+    VKNameCase_ins,      //творительный
+    VKNameCase_abl       //предложный
 };
 
 extern NSString *const VKUserField_sex;

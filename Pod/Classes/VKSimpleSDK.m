@@ -48,7 +48,7 @@
             success();
         }
     } failure:^(BOOL isConnection, VKApiError *error) {
-        if (!isConnection)
+        if (isConnection)
         {
             [AuthorizationHelper logout];
         }
