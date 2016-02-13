@@ -44,6 +44,7 @@
     [UIView animateWithDuration:0.5 animations:^{
         self.frame = rect;
     } completion:^(BOOL finished) {
+        [self.authView removeFromSuperview];
         [self removeFromSuperview];
     }];
 }

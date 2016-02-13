@@ -56,10 +56,18 @@ static NSString *kError = @"error";
 - (NSDictionary *)_explodeQueryString:(NSString *)queryString
 {
     NSArray *keyValuePairs = [queryString componentsSeparatedByString:@"&"];
+    if (keyValuePairs.count < 2)
+    {
+        return nil;
+    }
     NSMutableDictionary *parameters = [NSMutableDictionary new];
     for (NSString *keyValueString in keyValuePairs)
     {
         NSArray *keyValueArray = [keyValueString componentsSeparatedByString:@"="];
+        if (keyValueArray.count < 2)
+        {
+            return nil;
+        }
         parameters[keyValueArray[0]] = keyValueArray[1];
     }
     return parameters;

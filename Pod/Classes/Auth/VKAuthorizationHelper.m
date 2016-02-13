@@ -164,13 +164,11 @@ static NSString *VkOfficialClientUrl = @"vkauthorize://";
 - (void)vkAuthViewAuthSuccess
 {
     [self _authSuccess];
-    [_defaultAuthorizationView dismiss];
 }
 
 - (void)vkAuthViewAuthFailed
 {
     [self _authFailed];
-    [_defaultAuthorizationView dismiss];
 }
 
 - (void)vkAuthViewDidConnectionProblem
@@ -193,6 +191,7 @@ static NSString *VkOfficialClientUrl = @"vkauthorize://";
     {
         [self.output vkAuthViewAuthSuccess];
     }
+    [_defaultAuthorizationView dismiss];
 }
 
 - (void)_authFailed
@@ -205,6 +204,7 @@ static NSString *VkOfficialClientUrl = @"vkauthorize://";
     {
         [self.output vkAuthViewAuthFailed];
     }
+    [_defaultAuthorizationView dismiss];
 }
 
 #pragma mark - private
