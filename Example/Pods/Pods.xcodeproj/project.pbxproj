@@ -113,6 +113,9 @@
 		F543B3AFCB7BC97DE5A26041533B0321 /* VKSimple.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5788336D15F5AEA489D44D1540EFFF54 /* VKSimple.bundle */; };
 		F6B33EFF32F551BDF6ACF16E7DA345C2 /* VKPermissions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6311CE043413C6C274889A6DFF413E4E /* VKPermissions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F7416D6FB37269A3F08280B073D8D92C /* VKPhotoSize.h in Headers */ = {isa = PBXBuildFile; fileRef = EBDD2A4CBED8FCC780900FDC6C6BEED5 /* VKPhotoSize.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA706DA11C6FE83B003CF644 /* vk_logo_image@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA706DA01C6FE83B003CF644 /* vk_logo_image@3x.png */; };
+		FA706DA41C6FE849003CF644 /* VKDefaultAuthorizationView.h in Headers */ = {isa = PBXBuildFile; fileRef = FA706DA21C6FE849003CF644 /* VKDefaultAuthorizationView.h */; };
+		FA706DA51C6FE849003CF644 /* VKDefaultAuthorizationView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA706DA31C6FE849003CF644 /* VKDefaultAuthorizationView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -293,6 +296,9 @@
 		F42DF5DDDB2CC63A7D3B885097310E99 /* VKPhotos.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VKPhotos.h; sourceTree = "<group>"; };
 		F710B9B751F58727F33992641D5ADAD7 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		F92112379F6B29E5EB1B6D3735D34933 /* VKSimpleSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VKSimpleSDK.h; sourceTree = "<group>"; };
+		FA706DA01C6FE83B003CF644 /* vk_logo_image@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vk_logo_image@3x.png"; sourceTree = "<group>"; };
+		FA706DA21C6FE849003CF644 /* VKDefaultAuthorizationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKDefaultAuthorizationView.h; sourceTree = "<group>"; };
+		FA706DA31C6FE849003CF644 /* VKDefaultAuthorizationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKDefaultAuthorizationView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -568,6 +574,7 @@
 		899A2712593279D74E757A4A165659F1 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
+				FA706D9F1C6FE83B003CF644 /* Images */,
 				B58FAFCD0D126DC9863898E47B7D1E11 /* Classes */,
 			);
 			path = Pod;
@@ -618,6 +625,8 @@
 				7B58542F00EC353D40BFF819C53B453A /* VKSimpleAuthorization.m */,
 				E80194BD04851843D2131385600364E9 /* VKStorage.h */,
 				EB46BD6654FEB487EA8C8446D75174E0 /* VKStorage.m */,
+				FA706DA21C6FE849003CF644 /* VKDefaultAuthorizationView.h */,
+				FA706DA31C6FE849003CF644 /* VKDefaultAuthorizationView.m */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -724,6 +733,14 @@
 			name = Serialization;
 			sourceTree = "<group>";
 		};
+		FA706D9F1C6FE83B003CF644 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				FA706DA01C6FE83B003CF644 /* vk_logo_image@3x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		FD0A8B3246F40B60A367CE2CD9C2E984 /* VKSimple */ = {
 			isa = PBXGroup;
 			children = (
@@ -762,6 +779,7 @@
 				76B1C0DA23477E4A7F686B2E8EA836FD /* VKMethodsRequest.h in Headers */,
 				F6B33EFF32F551BDF6ACF16E7DA345C2 /* VKPermissions.h in Headers */,
 				C5406BDE4EB6E927812FC6E81C3FE28D /* VKPhoto.h in Headers */,
+				FA706DA41C6FE849003CF644 /* VKDefaultAuthorizationView.h in Headers */,
 				319CC889AE71F5B0D0C5FB34B67F85F7 /* VKPhotos.h in Headers */,
 				F7416D6FB37269A3F08280B073D8D92C /* VKPhotoSize.h in Headers */,
 				D9C7173C79EAE789C98C7DD89D30C8FE /* VKPhotoSpecial.h in Headers */,
@@ -963,6 +981,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F543B3AFCB7BC97DE5A26041533B0321 /* VKSimple.bundle in Resources */,
+				FA706DA11C6FE83B003CF644 /* vk_logo_image@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1007,6 +1026,7 @@
 				F37F90A45CD16AF31F2B608E49CAC916 /* VKPermissions.m in Sources */,
 				EFA114DE7F1215B1AA41DAEC2CEB1B76 /* VKPhoto.m in Sources */,
 				90ED75284D7A7E738FFFE7B012CFCF9B /* VKPhotos.m in Sources */,
+				FA706DA51C6FE849003CF644 /* VKDefaultAuthorizationView.m in Sources */,
 				41C3072AC6B25FDD40D1B9B8B41135D0 /* VKPhotoSize.m in Sources */,
 				27F2C965CB4BC07C9B8719996BD6BB43 /* VKPhotoSpecial.m in Sources */,
 				208F3CC8B598CB0785C5D36AF3377F3A /* VKReposts.m in Sources */,
