@@ -4,6 +4,7 @@
 //
 
 #import "VKUser.h"
+#import "VKUserCounters.h"
 
 static NSString *kUserId = @"uid";
 static NSString *kFirstName = @"first_name";
@@ -17,6 +18,7 @@ static NSString *kPhoto400orig = @"photo_400_orig";
 static NSString *kPhotoMax = @"photo_max";
 static NSString *kPhotoMaxOrig = @"photo_max_orig";
 static NSString *kFriendsCount = @"common_count";
+static NSString *kCounters = @"counters";
 
 @implementation VKUser
 
@@ -76,6 +78,7 @@ static NSString *kFriendsCount = @"common_count";
         _photoMax = dictionary[kPhotoMax];
         _photoMaxOrig = dictionary[kPhotoMaxOrig];
         _friendsCount = dictionary[kFriendsCount];
+        _counters = [VKUserCounters userCountersFromResponse:dictionary[kCounters]];
     }
     return self;
 }

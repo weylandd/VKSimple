@@ -27,6 +27,7 @@ NSString *const VKUserField_photo_400_orig = @"photo_400_orig";
 NSString *const VKUserField_photo_max = @"photo_max";
 NSString *const VKUserField_photo_max_orig = @"photo_max_orig";
 NSString *const VKUserField_common_count = @"common_count";
+NSString *const VKUserField_counters = @"counters";
 
 @implementation VKSimpleMethodsUsers
 

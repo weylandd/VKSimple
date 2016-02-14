@@ -1,9 +1,6 @@
 //
 //  VKAuthorizationController.m
-//  Pods
-//
-//  Created by Alex Kopachev on 14.02.16.
-//
+//  VkSimpleSdk
 //
 
 #import "VKDefaultAuthorizationView.h"

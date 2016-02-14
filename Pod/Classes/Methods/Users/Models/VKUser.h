@@ -5,6 +5,7 @@
 
 #import <Foundation/Foundation.h>
 #import "VKConsts.h"
+@class VKUserCounters;
 
 @interface VKUser : NSObject
 
@@ -20,6 +21,7 @@
 @property (nonatomic, strong) NSString *photoMax;
 @property (nonatomic, strong) NSString *photoMaxOrig;
 @property (nonatomic, strong) NSNumber *friendsCount;
+@property (nonatomic, strong) VKUserCounters *counters;
 
 + (void)parseUserFromResponse:(id)response
                       success:(void (^)(VKUser *user))success

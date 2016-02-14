@@ -26,6 +26,7 @@ extern NSString *const VKUserField_photo_400_orig;
 extern NSString *const VKUserField_photo_max;
 extern NSString *const VKUserField_photo_max_orig;
 extern NSString *const VKUserField_common_count;
+extern NSString *const VKUserField_counters;
 
 @interface VKSimpleMethodsUsers : NSObject
 
