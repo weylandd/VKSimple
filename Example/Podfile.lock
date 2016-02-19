@@ -20,7 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - VKSimple (1.0.0):
+  - VKSimple (1.2.3):
     - AFNetworking (~> 2.3)
 
 DEPENDENCIES:
@@ -32,6 +32,6 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
-  VKSimple: db5d62738d8d863fc1b87b06d448c3509b68a8fb
+  VKSimple: 2b732869c2dd535f50eeabbdde8b80322a26cc09
 
 COCOAPODS: 0.39.0

@@ -15,8 +15,8 @@
 @property (nonatomic, weak) IBOutlet UIButton *signInWeb;
 @property (nonatomic, weak) IBOutlet UIButton *signOut;
 
-// окно авторизации
-@property (nonatomic, strong) VKAuthorizationView *authView;
+// окно авторизации // с версии 1.2 его необязательно устанавливать, хотя и можно
+//@property (nonatomic, strong) VKAuthorizationView *authView;
 @property (nonatomic, assign) BOOL isUserLogged;
 
 @end
@@ -37,9 +37,9 @@
     } failure:^(BOOL isConnection, VKApiError *error) {
         self.isUserLogged = !isConnection;
     }];
-    self.authView = VKSimpleAuth.authView;
-    self.authView.hidden = YES;
-    [self.view addSubview:self.authView];
+//    self.authView = VKSimpleAuth.authView;
+//    self.authView.hidden = YES;
+//    [self.view addSubview:self.authView];
 }
 
 #pragma mark - > layout <
@@ -52,8 +52,8 @@
 - (void)_layoutAuthView
 {
     // устанавливаем frame для окна авторизации
-    CGRect rect = self.view.bounds;
-    self.authView.frame = rect;
+//    CGRect rect = self.view.bounds;
+//    self.authView.frame = rect;
 }
 
 #pragma mark - actions

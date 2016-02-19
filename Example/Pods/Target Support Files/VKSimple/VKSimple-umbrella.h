@@ -2,6 +2,7 @@
 
 #import "VKAuthorizationHelper.h"
 #import "VKAuthorizationView.h"
+#import "VKDefaultAuthorizationView.h"
 #import "VKPermissions.h"
 #import "VKSdkVersion.h"
 #import "VKSimpleAuthorization.h"
@@ -20,6 +21,7 @@
 #import "VKPhotoSize.h"
 #import "VKPhotoSpecial.h"
 #import "VKUser.h"
+#import "VKUserCounters.h"
 #import "VKSimpleMethodsUsers.h"
 #import "VKMethods.h"
 #import "VKMethodsRequest.h"

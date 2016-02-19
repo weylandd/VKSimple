@@ -31,6 +31,6 @@ typedef NS_ENUM(NSInteger, VKLikesFilterType)
 
 + (void)getList_withType:(VKObjectType)type ownerId:(NSNumber *)ownerId itemId:(NSNumber *)itemId success:(void(^)(NSArray *users))success failure:(FailureBlock)failure;
 + (void)getList_withType:(VKObjectType)type ownerId:(NSNumber *)ownerId itemId:(NSNumber *)itemId filterType:(VKLikesFilterType)filterType success:(void (^)(NSArray *users))success failure:(FailureBlock)failure;
-+ (void)getList_withType:(VKObjectType)type ownerId:(NSNumber *)ownerId itemId:(NSNumber *)itemId pageUrl:(NSString *)pageUrl filterType:(VKLikesFilterType)filterType friendsOnly:(BOOL)friendsOnly extendedInfo:(BOOL)extendedInfo offset:(NSNumber *)offset count:(NSNumber *)count skipOwn:(BOOL)skipOwn isNeedToken:(BOOL)isNeedToken success:(void(^)(NSArray *users))success failure:(FailureBlock)failure;
++ (void)getList_withType:(VKObjectType)type ownerId:(NSNumber *)ownerId itemId:(NSNumber *)itemId pageUrl:(NSString *)pageUrl filterType:(VKLikesFilterType)filterType friendsOnly:(BOOL)friendsOnly extendedInfo:(BOOL)extendedInfo offset:(NSNumber *)offset count:(NSNumber *)count skipOwn:(BOOL)skipOwn isNeedToken:(BOOL)isNeedToken isAutoErrorHandling:(BOOL)isAutoErrorHandling success:(void(^)(NSArray *users))success failure:(FailureBlock)failure;
 
 @end
