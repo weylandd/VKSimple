@@ -22,14 +22,14 @@ static NSString *kCounters = @"counters";
 
 @implementation VKUser
 
-+ (void)parseUserFromResponse:(id)response success:(void (^)(VKUser *))success failure:(FailureBlock)failure
++ (void)parseUserFromResponse:(id)response success:(void (^)(NSArray *users))success failure:(FailureBlock)failure
 {
-    VKUser *user = [VKUser userFromResponse:response];
-    if (user)
+    NSArray *users = [self usersFromResponse:response];
+    if (users)
     {
         if (success)
         {
-            success(user);
+            success(users);
         }
         return;
     }
@@ -48,17 +48,22 @@ static NSString *kCounters = @"counters";
     }
 }
 
-+ (instancetype)userFromResponse:(id)response
++ (NSArray *)usersFromResponse:(id)response
 {
+    NSMutableArray *users = [NSMutableArray new];
     if (response && [response isKindOfClass:[NSArray class]])
     {
         NSArray *array = response;
-        if (array && [array.firstObject isKindOfClass:[NSDictionary class]])
+        for (id dict in array)
         {
-            return [[VKUser alloc] initWithDictionary:array.firstObject];
+            if (dict && [dict isKindOfClass:[NSDictionary class]])
+            {
+                VKUser *user = [[VKUser alloc] initWithDictionary:array.firstObject];
+                [users addObject:user];
+            }
         }
     }
-    return nil;
+    return users;
 }
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary

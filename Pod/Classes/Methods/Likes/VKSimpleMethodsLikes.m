@@ -38,12 +38,12 @@ static NSString *kSkipOwn = @"skip_own";
 
 + (void)getList_withType:(VKObjectType)type ownerId:(NSNumber *)ownerId itemId:(NSNumber *)itemId success:(void (^)(NSArray *users))success failure:(FailureBlock)failure
 {
-    [self getList_withType:type ownerId:ownerId itemId:itemId pageUrl:nil filterType:VKLikesFilterType_default friendsOnly:NO extendedInfo:NO offset:nil count:@1000 skipOwn:NO success:success failure:failure];
+    [self getList_withType:type ownerId:ownerId itemId:itemId pageUrl:nil filterType:VKLikesFilterType_default friendsOnly:NO extendedInfo:NO offset:nil count:@1000 skipOwn:NO isNeedToken:NO success:success failure:failure];
 }
 
 + (void)getList_withType:(VKObjectType)type ownerId:(NSNumber *)ownerId itemId:(NSNumber *)itemId filterType:(VKLikesFilterType)filterType success:(void (^)(NSArray *users))success failure:(FailureBlock)failure
 {
-    [self getList_withType:VKObjectType_photo ownerId:ownerId itemId:itemId pageUrl:nil filterType:filterType friendsOnly:NO extendedInfo:NO offset:nil count:@1000 skipOwn:NO success:success failure:failure];
+    [self getList_withType:VKObjectType_photo ownerId:ownerId itemId:itemId pageUrl:nil filterType:filterType friendsOnly:NO extendedInfo:NO offset:nil count:@1000 skipOwn:NO isNeedToken:NO success:success failure:failure];
 }
 
 + (void)getList_withType:(VKObjectType)type
@@ -56,6 +56,7 @@ static NSString *kSkipOwn = @"skip_own";
                   offset:(NSNumber *)offset
                    count:(NSNumber *)count
                  skipOwn:(BOOL)skipOwn
+             isNeedToken:(BOOL)isNeedToken
                  success:(void (^)(NSArray *))success
                  failure:(FailureBlock)failure
 {
@@ -69,17 +70,21 @@ static NSString *kSkipOwn = @"skip_own";
                              kOffset: ObjectOrNull(offset),
                              kCount: ObjectOrNull(count),
                              kSkipOwn: @(skipOwn)};
-    [VKMethodsRequest responseWithMethod:kMethod_getList params:params isNeedToken:YES completion:^(id responseObject) {
+    [VKMethodsRequest responseWithMethod:kMethod_getList params:params isNeedToken:isNeedToken completion:^(id responseObject) {
         [VKArrayResult parseResultFromResponse:responseObject success:^(VKArrayResult *result) {
             if (success)
             {
                 success(result.array);
             }
         } failure:^(BOOL isConnection, VKApiError *error) {
-            if ([error.code isEqualToNumber:@(6)])
+            if ([error.code isEqualToNumber:@15])
+            {
+                [self getList_withType:type ownerId:ownerId itemId:itemId pageUrl:pageUrl filterType:filterType friendsOnly:friendsOnly extendedInfo:extendedInfo offset:offset count:count skipOwn:skipOwn isNeedToken:YES success:success failure:failure];
+            }
+            else if ([error.code isEqualToNumber:@6])
             {
                 dispatch_after(dispatch_time(0.5 * DISPATCH_TIME_NOW, (int64_t)(NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [self getList_withType:type ownerId:ownerId itemId:itemId pageUrl:pageUrl filterType:filterType friendsOnly:friendsOnly extendedInfo:extendedInfo offset:offset count:count skipOwn:skipOwn success:success failure:failure];
+                    [self getList_withType:type ownerId:ownerId itemId:itemId pageUrl:pageUrl filterType:filterType friendsOnly:friendsOnly extendedInfo:extendedInfo offset:offset count:count skipOwn:skipOwn isNeedToken:isNeedToken success:success failure:failure];
                 });
             }
             else if (failure)

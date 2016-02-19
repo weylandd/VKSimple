@@ -33,27 +33,27 @@ NSString *const VKUserField_counters = @"counters";
 
 #pragma mark - get
 
-+ (void)get_success:(void(^)(VKUser *user))success failure:(FailureBlock)failure
++ (void)get_success:(void(^)(NSArray *user))success failure:(FailureBlock)failure
 {
     [self get_withUserIds:nil success:success failure:failure];
 }
 
-+ (void)get_withUserIds:(NSArray<NSString *> *)userIds success:(void (^)(VKUser *))success failure:(FailureBlock)failure
++ (void)get_withUserIds:(NSArray<NSString *> *)userIds success:(void (^)(NSArray *))success failure:(FailureBlock)failure
 {
     [self get_withUserIds:userIds fields:nil success:success failure:failure];
 }
 
-+ (void)get_withUserIds:(NSArray<NSString *> *)userIds fields:(NSArray<NSString *> *)fields success:(void (^)(VKUser *))success failure:(FailureBlock)failure
++ (void)get_withUserIds:(NSArray<NSString *> *)userIds fields:(NSArray<NSString *> *)fields success:(void (^)(NSArray *))success failure:(FailureBlock)failure
 {
     [self get_withUserIds:userIds fields:fields nameCase:VKNameCase_nom success:success failure:failure];
 }
 
-+ (void)get_withUserIds:(NSArray<NSString *> *)userIds fields:(NSArray<NSString *> *)fields nameCase:(VKNameCase)nameCase success:(void (^)(VKUser *))success failure:(FailureBlock)failure
++ (void)get_withUserIds:(NSArray<NSString *> *)userIds fields:(NSArray<NSString *> *)fields nameCase:(VKNameCase)nameCase success:(void (^)(NSArray *))success failure:(FailureBlock)failure
 {
     NSDictionary *params = @{kParam_user_ids: ObjectOrNull([self _stringOfArray:userIds]),
                              kParam_fields: ObjectOrNull([self _stringOfArray:fields]),
                              kParam_name_case: ObjectOrNull([self _stringOfNameCase:nameCase])};
-    BOOL isNeedToken = !userIds;
+    BOOL isNeedToken = !userIds || userIds.count > 1;
     [VKMethodsRequest responseWithMethod:kMethod_get params:params isNeedToken:isNeedToken completion:^(id responseObject) {
         [VKUser parseUserFromResponse:responseObject success:success failure:failure];
     } failure:failure];

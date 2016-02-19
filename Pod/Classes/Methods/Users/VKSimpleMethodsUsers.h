@@ -30,9 +30,9 @@ extern NSString *const VKUserField_counters;
 
 @interface VKSimpleMethodsUsers : NSObject
 
-+ (void)get_success:(void(^)(VKUser *user))success failure:(FailureBlock)failure;
-+ (void)get_withUserIds:(NSArray<NSString *> *)userIds success:(void(^)(VKUser *user))success failure:(FailureBlock)failure;
-+ (void)get_withUserIds:(NSArray<NSString *> *)userIds fields:(NSArray<NSString *> *)fields success:(void(^)(VKUser *user))success failure:(FailureBlock)failure;
-+ (void)get_withUserIds:(NSArray<NSString *> *)userIds fields:(NSArray<NSString *> *)fields nameCase:(VKNameCase)nameCase success:(void(^)(VKUser *user))success failure:(FailureBlock)failure;
++ (void)get_success:(void(^)(NSArray *users))success failure:(FailureBlock)failure;
++ (void)get_withUserIds:(NSArray<NSString *> *)userIds success:(void(^)(NSArray *users))success failure:(FailureBlock)failure;
++ (void)get_withUserIds:(NSArray<NSString *> *)userIds fields:(NSArray<NSString *> *)fields success:(void(^)(NSArray *users))success failure:(FailureBlock)failure;
++ (void)get_withUserIds:(NSArray<NSString *> *)userIds fields:(NSArray<NSString *> *)fields nameCase:(VKNameCase)nameCase success:(void(^)(NSArray *users))success failure:(FailureBlock)failure;
 
 @end

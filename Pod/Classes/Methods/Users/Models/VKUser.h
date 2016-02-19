@@ -24,9 +24,7 @@
 @property (nonatomic, strong) VKUserCounters *counters;
 
 + (void)parseUserFromResponse:(id)response
-                      success:(void (^)(VKUser *user))success
+                      success:(void (^)(NSArray *users))success
                       failure:(FailureBlock)failure;
-
-+ (instancetype)userFromResponse:(id)response;
 
 @end

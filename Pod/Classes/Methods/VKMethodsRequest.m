@@ -31,7 +31,7 @@ static NSString *kErrorCodeKey = @"_kCFStreamErrorCodeKey";
              BOOL isConnection = ![self _isConnectionError:error];
              if (!isConnection)
              {
-                 VKError(@"%@", error);
+                 VKError(@"%@\nconnection problem", error);
              }
              if (failure)
              {
@@ -59,8 +59,6 @@ static NSString *kErrorCodeKey = @"_kCFStreamErrorCodeKey";
 {
     NSDictionary *params = error.userInfo;
     NSInteger code = [params[kErrorCodeKey] integerValue];
-    
-    VKError(@"connection problem");
     return code == 8;
 }
 

@@ -42,7 +42,7 @@
         return;
     }
     // пробуем вызвать метод для проверки токена
-    [VKSimpleMethodsUsers get_success:^(VKUser *user) {
+    [VKSimpleMethodsUsers get_success:^(NSArray *users) {
         if (success)
         {
             success();
