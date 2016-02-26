@@ -5,8 +5,10 @@
 
 #import "VKSimpleMethodsLikes.h"
 #import "VKArrayResult.h"
+#import "VKLikesCount.h"
 
 static NSString *kMethod_getList = @"likes.getList";
+static NSString *kMethod_add = @"likes.add";
 
 static NSString *kVKLikesFilterType_default = @"";
 static NSString *kVKLikesFilterType_likes = @"likes";
@@ -95,6 +97,23 @@ static NSString *kSkipOwn = @"skip_own";
         }];
     } failure:failure];
 }
+
++ (void)add_withType:(VKObjectType)type ownerId:(NSNumber *)ownerId itemId:(NSNumber *)itemId success:(void (^)(NSInteger likes))success failure:(FailureBlock)failure
+{
+    NSDictionary *params = @{kType: [self _stringOfObjectType:type],
+                             kOwnerId: ObjectOrNull(ownerId),
+                             kItemId: ObjectOrNull(itemId)};
+    [VKMethodsRequest responseWithMethod:kMethod_add params:params isNeedToken:YES completion:^(id responseObject) {
+        [VKLikesCount parseResultFromResponse:responseObject success:^(VKLikesCount *likesCount) {
+            if (success)
+            {
+                success(likesCount.value);
+            }
+        } failure:failure];
+    } failure:failure];
+}
+
+#pragma mark - Private
 
 + (NSString *)_stringOflikesFilterType:(VKLikesFilterType)filterType
 {
