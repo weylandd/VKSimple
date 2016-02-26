@@ -68,9 +68,14 @@ static NSString *kErrorCodeKey = @"_kCFStreamErrorCodeKey";
     [dict setObject:VK_SDK_API_VERSION forKey:kParam_version];
     if (isNeedToken)
     {
-        [dict setObject:[VKStorage accessToken] forKey:kParam_token];
+        [dict setObject:ObjectOrNull([VKStorage accessToken]) forKey:kParam_token];
     }
     return dict;
+}
+
+static id ObjectOrNull(id object)
+{
+    return object ?: [NSNull null];
 }
 
 @end

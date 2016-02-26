@@ -58,7 +58,7 @@ static NSString *kCounters = @"counters";
         {
             if (dict && [dict isKindOfClass:[NSDictionary class]])
             {
-                VKUser *user = [[VKUser alloc] initWithDictionary:array.firstObject];
+                VKUser *user = [[VKUser alloc] initWithDictionary:dict];
                 [users addObject:user];
             }
         }

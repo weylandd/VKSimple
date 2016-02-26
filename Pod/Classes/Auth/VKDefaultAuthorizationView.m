@@ -94,6 +94,7 @@
 - (void)_layoutBackButton
 {
     CGRect rect = self.bounds;
+    rect.origin.x = CGRectGetWidth(rect) - 80;
     rect.origin.y = CGRectGetWidth(rect) < CGRectGetHeight(rect)? 20: 0;
     rect.size.height = CGRectGetWidth(rect) < CGRectGetHeight(rect)? 44: 30;
     rect.size.width = 80;
@@ -104,7 +105,7 @@
 {
     CGRect rect = self.bounds;
     NSInteger statusBarHeight = CGRectGetWidth(rect) < CGRectGetHeight(rect)? 20: 0;
-    NSInteger navBarHeight = CGRectGetWidth(rect) < CGRectGetHeight(rect)? 64: 30;
+    NSInteger navBarHeight = CGRectGetWidth(rect) < CGRectGetHeight(rect)? 44: 30;
     rect.origin.x = (CGRectGetWidth(rect) - 40) / 2;
     rect.origin.y = (navBarHeight - 24) / 2 + statusBarHeight;
     rect.size.width = 40;
@@ -129,6 +130,10 @@
     {
         _topView = [UIView new];
         _topView.backgroundColor = RGBA(90, 131, 178, 1);
+        _topView.layer.shadowColor = RGBA(65, 89, 116, 1).CGColor;
+        _topView.layer.shadowOffset = CGSizeMake(0, 0.5);
+        _topView.layer.shadowOpacity = 1;
+        _topView.layer.shadowRadius = 0;
         [self addSubview:_topView];
     }
     return _topView;
