@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "VKSimple"
-  s.version          = "1.2.5"
+  s.version          = "1.2.6"
   s.summary          = "VKSimple"
 
   s.homepage         = "https://github.com/weylandd/VKSimple"
